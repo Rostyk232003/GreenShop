@@ -9,36 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26a8d084-df13-4cd8-a5f4-678f0eb66cd0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ua/edu/nung/ksm/controller/CartServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ua/edu/nung/ksm/controller/GoodsServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ua/edu/nung/ksm/controller/StartServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ua/edu/nung/ksm/model/Cart.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ua/edu/nung/ksm/model/Firebase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ua/edu/nung/ksm/model/Good.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ua/edu/nung/ksm/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ua/edu/nung/ksm/view/ContactView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ua/edu/nung/ksm/view/IndexView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/app.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/css/appstyle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/css/bootstrap.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/js/bootstrap.bundle.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/js/bootstrap.bundle.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/js/indexapplication.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/html/emptyPage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/html/footerPartial.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/html/headerPartial.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/html/loginFormPartial.html" afterDir="false" />
-    </list>
+    <list default="true" id="26a8d084-df13-4cd8-a5f4-678f0eb66cd0" name="Changes" comment="Add FireBase and rebuilt structure of project" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -224,7 +195,17 @@
       <workItem from="1710137941869" duration="3705000" />
       <workItem from="1710223176566" duration="5034000" />
       <workItem from="1710240122692" duration="350000" />
+      <workItem from="1710243308418" duration="666000" />
     </task>
+    <task id="LOCAL-00001" summary="Add FireBase and rebuilt structure of project">
+      <option name="closed" value="true" />
+      <created>1710243818868</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1710243818869</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -235,10 +216,26 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add FireBase and rebuilt structure of project" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add FireBase and rebuilt structure of project" />
   </component>
 </project>
