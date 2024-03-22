@@ -12,6 +12,9 @@ import com.google.gson.JsonParser;
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
+/**
+ * URL https://firebase.google.com/docs/admin/setup
+ */
 
 public class Firebase {
     public static final String USER_EXISTS = "User exists";
