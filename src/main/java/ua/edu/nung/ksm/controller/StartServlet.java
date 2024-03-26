@@ -9,6 +9,8 @@ import jakarta.servlet.http.HttpSession;
 import ua.edu.nung.ksm.model.Firebase;
 import ua.edu.nung.ksm.model.User;
 import ua.edu.nung.ksm.view.IndexView;
+import ua.edu.nung.ksm.view.MainPage;
+import ua.edu.nung.ksm.view.ViewConfig;
 
 import java.io.*;
 import java.util.Properties;
@@ -91,6 +93,10 @@ public class StartServlet extends HttpServlet {
     public void init() throws ServletException {
         super.init();
         String path = getServletContext().getRealPath("html/");
+
+        ViewConfig viewConfig = ViewConfig.getInstance();
+        viewConfig.setPath(path);
+
         IndexView indexView = IndexView.getInstance();
         indexView.setPath(path);
 
