@@ -1,4 +1,4 @@
-package ua.edu.nung.ksm.model;
+package ua.edu.nung.ksm.dao.entity;
 
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.firebase.FirebaseApp;

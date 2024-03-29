@@ -6,8 +6,9 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import ua.edu.nung.ksm.model.Firebase;
-import ua.edu.nung.ksm.model.User;
+import ua.edu.nung.ksm.dao.entity.Firebase;
+import ua.edu.nung.ksm.dao.entity.User;
+import ua.edu.nung.ksm.dao.repository.UserRepository;
 import ua.edu.nung.ksm.view.MainPage;
 import ua.edu.nung.ksm.view.ViewConfig;
 
@@ -47,6 +48,11 @@ public class StartServlet extends HttpServlet {
                 .getFullPage();
 
         out.println(builderPage);
+
+        // TODO remove test code
+        UserRepository userRepository = new UserRepository();
+        User user1 = userRepository.getUserByEmail("rostyk@gmail.com");
+        System.out.println(user1);
 
 
 //        user.setEmail("email1@email.com");

@@ -1,4 +1,4 @@
-package ua.edu.nung.ksm.model;
+package ua.edu.nung.ksm.dao.entity;
 
 import java.util.Arrays;
 import java.util.Objects;
