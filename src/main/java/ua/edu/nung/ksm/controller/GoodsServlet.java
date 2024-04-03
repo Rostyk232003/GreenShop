@@ -6,7 +6,9 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import ua.edu.nung.ksm.dao.entity.Good;
+import ua.edu.nung.ksm.dao.entity.Price;
 import ua.edu.nung.ksm.dao.repository.GoodRepository;
+import ua.edu.nung.ksm.dao.repository.PriceRepository;
 import ua.edu.nung.ksm.view.MainPage;
 
 import java.io.IOException;
@@ -39,19 +41,52 @@ public class GoodsServlet extends HttpServlet {
         GoodRepository goodRepository = new GoodRepository();
         ArrayList<Good>  goods = goodRepository.getAll();
 
+        PriceRepository priceRepository = new PriceRepository();
+        ArrayList<Price>  prices = priceRepository.getPricesForGoods();
+
         String body = goods.stream().map(good -> {
-            return "<div class=\"col-12 col-sm-6 col-lg-4 col-xl-3 my-2\">" +
+            Price price = null;
+            for (Price p : prices) {
+                if (p.getGood_id() == good.getId()) {
+                    price = p;
+                    break;
+                }
+            }
+
+            if (price != null) {
+                return "<div class=\"col-12 col-sm-6 col-lg-4 col-xl-3 my-2\">" +
+                        "<div class=\"card\" style=\"width: 18rem;\">\n" +
+                        "  <div class=\"card-body\">\n" +
+                        "    <h5 class=\"card-title\">" + good.getName() + "</h5>\n" +
+                        "    <h6 class=\"card-subtitle mb-2 text-body-secondary\">Card subtitle</h6>\n" +
+                        "    <p class=\"card-text\">" + good.getDescription() + "</p>\n" +
+                        "    <h6 class=\"card-subtitle mb-2 text-body-secondary\">Price</h6>\n" +
+                        "    <p class=\"card-text\">" + price.getFor_client() + "</p>\n" +
+                        "    <a href=\"#\" class=\"card-link\">Card link</a>\n" +
+                        "    <a href=\"#\" class=\"card-link\">Another link</a>\n" +
+                        "  </div>\n" +
+                        "</div>"
+                        + "</div>";
+            } else {
+                return "";
+            }
+        }).collect(Collectors.joining());
+
+      /* String body = goods.stream().map(good -> {
+           return "<div class=\"col-12 col-sm-6 col-lg-4 col-xl-3 my-2\">" +
                     "<div class=\"card\" style=\"width: 18rem;\">\n" +
                     "  <div class=\"card-body\">\n" +
                     "    <h5 class=\"card-title\">" + good.getName() + "</h5>\n" +
                     "    <h6 class=\"card-subtitle mb-2 text-body-secondary\">Card subtitle</h6>\n" +
                     "    <p class=\"card-text\">" + good.getDescription() + "</p>\n" +
+                    "    <h6 class=\"card-subtitle mb-2 text-body-secondary\">Price</h6>\n" +
+                    "    <p class=\"card-text\">" + price.getFor_client() + "</p>\n" +
                     "    <a href=\"#\" class=\"card-link\">Card link</a>\n" +
                     "    <a href=\"#\" class=\"card-link\">Another link</a>\n" +
                     "  </div>\n" +
                     "</div>"
                     + "</div>";
-        }).collect(Collectors.joining());
+        }).collect(Collectors.joining()); */
 
         body = "<div class=\"container-fluid\"> <div class=\"row\">" + body + "</div> </div>";
 
