@@ -26,9 +26,13 @@ public class StartServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         String context = "";
-        HttpSession httpSession = request.getSession();
-        User user = (User) httpSession.getAttribute(User.USER_SESSION_NAME);
-        String userName = user == null ? "" : user.getDisplayName();
+        HttpSession httpSession = request.getSession(false);
+        User user;
+        String userName = "";
+        if (httpSession != null) {
+            user = (User) httpSession.getAttribute(User.USER_SESSION_NAME);
+            userName = user == null ? "" : user.getDisplayName();
+        }
 
         logger.info("Successfully started");
 
@@ -55,7 +59,7 @@ public class StartServlet extends HttpServlet {
 
         // TODO remove test code
         UserRepository userRepository = new UserRepository();
-        User user1 = userRepository.getUserByEmail("ihorlt@gmail.com");
+        User user1 = userRepository.getUserByEmail("rostyk@gmail.com");
         System.out.println(user1);
 
 
@@ -80,14 +84,15 @@ public class StartServlet extends HttpServlet {
             String firebaseResponse = firebase.signInWithEmailAndPassword(user.getEmail(), user.getPassword());
             if(firebaseResponse.equals(Firebase.PASSWORD_OK)) {
                 System.out.println(Firebase.PASSWORD_OK);
-                user.setDisplayName("Best User");
+                user.setDisplayName("Rostyk");
                 httpSession = request.getSession();
                 httpSession.setAttribute(User.USER_SESSION_NAME, user);
+                logger.info("Successfully login " + user.getEmail());
             }  else {
-                System.out.println("Wrong Password");
+                logger.info("Wrong Password " + user.getEmail());
             }
         } else {
-            System.out.println("User NOT Exist");
+            logger.info("User NOT Exist " + user.getEmail());
             String userMsg = Firebase.getInstance().createUser(user);
         }
 
